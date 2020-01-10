@@ -1,0 +1,21 @@
+{
+    "title": "",
+    "services": [
+        {
+            "name": "",
+            "description": "",
+            "group": "",
+            "repo_link": "",
+            "urls": [
+                {
+                    "dev": "",
+                    "prod": ""
+                }
+            ],
+            "no_env_url": "",
+            "dependencies": [
+                ""
+            ]
+        }
+    ]
+}
