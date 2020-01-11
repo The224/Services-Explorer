@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { filter } from 'rxjs/observable/';
-
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface Application {
   name: string;
@@ -12,7 +11,6 @@ export interface Application {
   no_env_url: string;
   dependencies: string[];
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +27,7 @@ export class ApplicationService {
       repo_link: "",
       urls: { "dev": "", },
       no_env_url: "",
-      dependencies: [],
+      dependencies: ["", ""],
     }
     this.applicationObservable.next([testApp])
   }
@@ -38,13 +36,31 @@ export class ApplicationService {
     this.applicationObservable.next(apps)
   }
 
-  public get_groups() {
-
+  public get_groups(): Observable<string[]> {
+    return this.applicationObservable.pipe(map(apps => Array.from(new Set(apps.map(app => app.group)))))
   }
 
-  public get_apps_by_group(groupName: string) {
-    this.applicationObservable.pipe(filter)
+  public get_by_group(groupName: string): Observable<Application[]> {
+    return this.applicationObservable.pipe(map(apps => apps.filter(app => app.group === groupName)))
   }
 
+  public add(app: Application) {
+    this.applicationObservable.pipe(map(apps => {
+      apps.push(app);
+      this.applicationObservable.next(apps);
+    }))
+  }
+
+  public remove(appName: string) {
+    this.applicationObservable.pipe(map(apps => {
+      apps = apps.filter(app => app.name !== appName);
+      this.applicationObservable.next(apps);
+    }))
+  }
+
+  public update(app: Application) {
+    this.remove(app.name)
+    this.add(app)
+  }
 
 }
