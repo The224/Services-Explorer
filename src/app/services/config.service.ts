@@ -25,10 +25,10 @@ export class ConfigService {
   }
 
   public exportConfig() {
-
-    var theJSON = JSON.stringify(this.config);
-    var element = document.createElement('a');
-    element.setAttribute('href', "data:text/json;charset=UTF-8," + encodeURIComponent(theJSON));
+    const currentConfig = this.config.getValue()
+    const configAsString = JSON.stringify(currentConfig, undefined, 2);
+    const element = document.createElement('a');
+    element.setAttribute('href', "data:text/json;charset=UTF-8," + encodeURIComponent(configAsString));
     element.setAttribute('download', "primer-server-task.json");
     element.style.display = 'none';
     document.body.appendChild(element);
