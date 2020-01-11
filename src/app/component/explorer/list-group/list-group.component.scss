@@ -1,6 +1,11 @@
 .groups {
+    max-height: 60vh;
+    overflow: scroll;
+    direction: rtl;
+
     p {
+        direction: ltr;
         margin: 0;
-        padding: 16px 16px 16px 0;
+        padding: 16px 16px 16px 8px;
     }
 }

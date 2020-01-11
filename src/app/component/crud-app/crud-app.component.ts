@@ -15,14 +15,13 @@ export class CrudAppComponent {
   constructor(private configService: ConfigService) { }
 
   import() {
+    const fileReader = new FileReader();
     this.fileImport.nativeElement.onchange = () => {
-      const fileToLoad = this.fileImport.nativeElement.files[0];
-      const fileReader = new FileReader();
       fileReader.onloadend = (fileLoadedEvent: any) => {
         const textFromFileLoaded = fileLoadedEvent.target.result as string;
         this.configService.loadConfig(JSON.parse(textFromFileLoaded));
       };
-      fileReader.readAsText(fileToLoad, "UTF-8");
+      fileReader.readAsText(this.fileImport.nativeElement.files[0], "UTF-8");
     };
     this.fileImport.nativeElement.click();
   }
