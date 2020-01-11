@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicationService } from 'src/app/services/application.service';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-env-selector',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnvSelectorComponent implements OnInit {
 
-  constructor() { }
+  public envs: string[] = []
+  public selectedEnv: string = ""
 
-  ngOnInit() {
+  constructor(private appService: ApplicationService) { }
+
+  public ngOnInit() {
+    this.appService.getEnvs().subscribe(envs => this.envs = envs);
+    this.appService.getSelectedEnv().pipe(debounceTime(100)).subscribe(env => this.selectedEnv = env);
+  }
+
+  public onSelect(env: string) {
+    this.appService.setSelectedEnv(env);
   }
 
 }

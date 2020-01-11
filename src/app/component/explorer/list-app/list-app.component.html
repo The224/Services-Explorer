@@ -1,5 +1,11 @@
-<div class="serviceList" *ngFor="let app of apps">
+<div class="apps">
 
-  <app-one-app [app]="app"></app-one-app>
+  <div class="gradient gradient-top"></div>
 
+  <div class="app-list-wrapper">
+    <div class="app-list">
+      <app-one-app *ngFor="let app of apps" [app]="app"></app-one-app>
+    </div>
+  </div>
+  <div class="gradient gradient-bottom"></div>
 </div>

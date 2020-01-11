@@ -22,36 +22,52 @@ export class ApplicationService {
   private selectedGroupObservable: BehaviorSubject<string> = new BehaviorSubject("Development");
   private selectedEnvObservable: BehaviorSubject<string> = new BehaviorSubject(null);
 
-  constructor() {
-    this.applicationObservable.next(MOCK_APP.services as any)
-  }
+  constructor() { }
 
   public reload(apps: Application[]) {
     this.applicationObservable.next(apps)
   }
 
-  public get_selected_env(): Observable<string> {
+  public getSelectedEnv(): Observable<string> {
     return this.selectedEnvObservable.asObservable()
   }
 
-  public set_selected_env(env: string) {
+  public setSelectedEnv(env: string) {
     this.selectedEnvObservable.next(env)
   }
 
-  public get_selected_group(): Observable<string> {
+  public getSelectedGroup(): Observable<string> {
     return this.selectedGroupObservable.asObservable()
   }
 
-  public set_selected_group(group: string) {
+  public setSelectedGroup(group: string) {
     this.selectedGroupObservable.next(group)
   }
 
-  public get_groups(): Observable<string[]> {
+  public getEnvs(): Observable<string[]> {
+    return this.applicationObservable.pipe(map(apps => {
+      const envs: string[] = []
+      apps.forEach(app => {
+        for (const key in app.urls) {
+          if (envs.indexOf(key) === -1) {
+            envs.push(key)
+          }
+        }
+      });
+      return envs;
+    }));
+  }
+
+  public getGroups(): Observable<string[]> {
     return this.applicationObservable.pipe(map(apps => Array.from(new Set(apps.map(app => app.group)))))
   }
 
-  public get_by_group(groupName: string): Observable<Application[]> {
+  public getByGroup(groupName: string): Observable<Application[]> {
     return this.applicationObservable.pipe(map(apps => apps.filter(app => app.group.toLocaleLowerCase() === groupName.toLocaleLowerCase())))
+  }
+
+  public getAll(): Observable<Application[]> {
+    return this.applicationObservable.asObservable()
   }
 
   public add(app: Application) {

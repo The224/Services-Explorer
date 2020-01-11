@@ -1,6 +1,5 @@
-<mat-chip-list class="envSelector" aria-label="env selector">
-  <mat-chip color="accent" selected>Dev</mat-chip>
-  <mat-chip>Alpha</mat-chip>
-  <mat-chip>Beta</mat-chip>
-  <mat-chip>Production</mat-chip>
+<mat-chip-list class="envSelector" aria-label="Env selector">
+  <mat-chip *ngFor="let env of envs" (click)="onSelect(env)" color="primary" [selected]="selectedEnv === env">
+    {{env | titlecase}}
+  </mat-chip>
 </mat-chip-list>

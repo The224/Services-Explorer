@@ -13,14 +13,14 @@ export class ListGroupComponent implements OnInit {
   constructor(private appService: ApplicationService) { }
 
   ngOnInit() {
-    this.appService.get_groups().subscribe(groups => {
+    this.appService.getGroups().subscribe(groups => {
       this.groups = groups;
       console.log(this.groups);
     })
   }
 
   public changeGroup(group: string) {
-    this.appService.set_selected_group(group)
+    this.appService.setSelectedGroup(group)
   }
 
 }

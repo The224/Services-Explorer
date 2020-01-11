@@ -16,7 +16,7 @@ export class OneAppComponent implements OnInit {
   constructor(private appService: ApplicationService) { }
 
   ngOnInit() {
-    this.appService.get_selected_env().subscribe(env => {
+    this.appService.getSelectedEnv().subscribe(env => {
       this.currentEnv = env;
       // TODO Check if there is urls
       if (this.app.urls /*in this.currentEnv*/) {

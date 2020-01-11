@@ -14,8 +14,8 @@ export class ListAppComponent implements OnInit {
   constructor(private appService: ApplicationService) { }
 
   ngOnInit() {
-    this.appService.get_selected_group().pipe(
-      switchMap(group => this.appService.get_by_group(group))
+    this.appService.getSelectedGroup().pipe(
+      switchMap(group => this.appService.getByGroup(group))
     ).subscribe(apps => {
       this.apps = apps;
       console.log(this.apps);

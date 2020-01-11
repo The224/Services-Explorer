@@ -1,0 +1,30 @@
+.apps {
+    position: relative;
+    max-height: 90vh;
+    overflow-x: auto;
+
+    .app-list {
+        // margin: -20px 0;
+    }
+
+    .gradient {
+        position: sticky;
+        width: 100%;
+        height: 85px;
+    }
+
+    .gradient-top {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8995973389355743) 26%, rgba(0, 212, 255, 0) 100%);
+        top: 0;
+    }
+
+    .gradient-bottom {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8995973389355743) 26%, rgba(0, 212, 255, 0) 100%);
+        bottom: 0;
+    }
+
+}
+
+::-webkit-scrollbar-button {
+    height: 85px;
+}

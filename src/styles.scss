@@ -1,3 +1,5 @@
+@import 'theme.scss';
+
 .container {
     height: 100vh;
 }
@@ -23,12 +25,16 @@ body {
     cursor: pointer;
     position: relative;
 
-    &:hover:after {
+    span {
+        position: relative;
+    }
+
+    &:hover span:after {
         left: 0;
         width: 100%;
     }
 
-    &:after {
+    span:after {
         bottom: 0;
         content: "";
         display: block;
@@ -39,4 +45,35 @@ body {
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }
+}
+
+.cookie_bar {
+    color: white;
+    background: #323232;
+
+    button {
+        color: mat-color($app-accent);
+
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
 }

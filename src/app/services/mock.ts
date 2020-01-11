@@ -37,7 +37,7 @@ export const MOCK_APP = {
   }, {
     "name": "Redash",
     "description": "Make Your Company Data Driven. Connect to any data source, easily visualize, dashboard and share your data.",
-    "group": "Software",
+    "group": "Development",
     "repo_link": "",
     "urls": {
       "dev": "https://redash.io/",
@@ -47,7 +47,7 @@ export const MOCK_APP = {
   }, {
     "name": "Chatwoot",
     "description": "This guide will help you get started with Chatwoot",
-    "group": "Software",
+    "group": "Development",
     "no_env_url": "https://www.chatwoot.com/docs",
     "dependencies": []
   }, {
@@ -61,7 +61,7 @@ export const MOCK_APP = {
   }, {
     "name": "Kubernetes",
     "description": "Container scheduling and management",
-    "group": "Cool stuff",
+    "group": "Development",
     "repo_link": "https://github.com/kubernetes/kubernetes",
     "urls": {
       "test": "https://kubernetes.io/",

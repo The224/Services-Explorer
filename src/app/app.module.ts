@@ -11,6 +11,9 @@ import { OneAppComponent } from './component/explorer/list-app/one-app/one-app.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CookieService } from './services/cookie.service';
+import { ConfigService } from './services/config.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +31,14 @@ import { MatChipsModule } from '@angular/material/chips';
     BrowserAnimationsModule,
     // Component
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private configService: ConfigService, private cookieService: CookieService) {
+    this.cookieService.init();
+  }
+}
