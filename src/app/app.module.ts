@@ -15,6 +15,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CookieService } from './services/cookie.service';
 import { ConfigService } from './services/config.service';
+import { HelpComponent } from './component/help/help.component';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,12 +28,15 @@ import { ConfigService } from './services/config.service';
     ListAppComponent,
     OneAppComponent,
     ListGroupComponent,
-    ExplorerComponent
+    ExplorerComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CodemirrorModule,
     // Component
     MatButtonModule,
     MatChipsModule,

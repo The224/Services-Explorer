@@ -1,0 +1,18 @@
+<div class="container mt-4 m-auto">
+  <div class="row h-100">
+    <div class="col-3 h-100  centered">
+      <h3>Hello!<br><span style="font-size: 0.7em;">Let's get started:</span></h3>
+    </div>
+    <div class="col-9 h-100 d-flex centered" style="flex-direction: column;">
+      <h4>Create a <code>*.json</code> file who look like this:</h4>
+      <ngx-codemirror [(ngModel)]="content" [options]="cmOptions">
+      </ngx-codemirror>
+      <h4>Then simply: </h4>
+      <input #fileImport type="file" style="display:none;" accept="application/json" />
+      <button mat-stroked-button color="primary" (click)="import()">Import</button>
+
+      <p style="padding-top: 24px; font-size: 0.7em;"><i>Note: Everything will be stored locally. No server.</i></p>
+
+    </div>
+  </div>
+</div>

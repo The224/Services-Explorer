@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApplicationService, Application } from './application.service';
 import { BehaviorSubject } from 'rxjs';
 import { MOCK_APP } from './mock';
+import { filter } from 'rxjs/operators';
 
 export interface Config {
   title: string;
@@ -16,8 +17,8 @@ export class ConfigService {
   public config: BehaviorSubject<Config> = new BehaviorSubject(null)
 
   constructor(private appService: ApplicationService) {
-    this.loadConfig(MOCK_APP as any)
-    this.config.subscribe(config => this.appService.reload(config.services));
+    // this.loadConfig(MOCK_APP as any)
+    this.config.pipe(filter(Boolean)).subscribe((config: Config) => this.appService.reload(config.services));
   }
 
   public loadConfig(config: Config) {
