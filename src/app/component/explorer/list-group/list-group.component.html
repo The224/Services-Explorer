@@ -1,5 +1,5 @@
 <div class="groups">
-  <p *ngFor="let group of groups" class="hoverline">
-    <span (click)="changeGroup(group)">{{group | titlecase}}</span>
+  <p *ngFor="let group of groups" class="hoverline" (click)="changeGroup(group)">
+    <span>{{group | titlecase}}</span>
   </p>
 </div>

@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { CookieService } from './services/cookie.service';
 import { ConfigService } from './services/config.service';
 
@@ -32,6 +33,7 @@ import { ConfigService } from './services/config.service';
     // Component
     MatButtonModule,
     MatChipsModule,
+    MatTooltipModule,
     MatSnackBarModule
   ],
   providers: [],

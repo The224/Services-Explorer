@@ -1,4 +1,5 @@
-@import 'theme.scss';
+@import 'assets/theme.scss';
+@import 'assets/override.scss';
 
 .container {
     height: 100vh;
@@ -58,22 +59,15 @@ body {
 }
 
 
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
+.rotating-fab {
+    span {
+        transition: all 0.7s ease-in-out;
+        transform: rotate(180deg);
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #e1e1e1;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-track {
-    border: 0px none #ffffff;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-corner {
-    background: transparent;
+    &.reversed {
+        span {
+            transform: rotate(-360deg);
+        }
+    }
 }
