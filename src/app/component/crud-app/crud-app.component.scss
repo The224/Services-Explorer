@@ -1,0 +1,23 @@
+.expendable-fab {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    .fabers-hider {
+        position: absolute;
+        bottom: 0;
+        width: 56px;
+        height: 178px;
+        overflow: hidden;
+        bottom: 26px;
+
+        .fabers-wrapper {
+            position: absolute;
+            padding: 0 8px;
+
+            button {
+                margin: 4px 0 4px 0;
+            }
+        }
+    }
+}
