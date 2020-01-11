@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/theme.scss';
+@import 'assets/override.scss';
+
+.container {
+    height: 100vh;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    font-size: 2rem;
+}
+
+.github {
+    cursor: pointer;
+
+    svg {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        z-index: 100;
+        font-size: 2rem;
+        width: 32px;
+        height: 32px;
+        fill: #333;
+    }
+}
+
+.hoverline {
+    cursor: pointer;
+    position: relative;
+
+    span {
+        position: relative;
+    }
+
+    &:hover span:after {
+        left: 0;
+        width: 100%;
+    }
+
+    span:after {
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        background: #333;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+}
+
+.cookie_bar {
+    color: white;
+    background: #323232;
+
+    button {
+        color: mat-color($app-accent);
+
+    }
+}
+
+.rotating-fab {
+    span {
+        transition: all 0.7s ease-in-out;
+        transform: rotate(180deg);
+    }
+
+    &.reversed {
+        span {
+            transform: rotate(-360deg);
+        }
+    }
+}

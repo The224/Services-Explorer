@@ -1,0 +1,48 @@
+<div class="expendable-fab">
+  <div class="fabers-wrapper">
+    <div class="fabers" [ngClass]="{'fabers-hide': hide}">
+      <!-- Add -->
+      <!-- <button mat-mini-fab color="primary" matTooltip="Add a service" matTooltipPosition="left">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="#fff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+        </svg>
+      </button> -->
+      <!-- Remove -->
+      <!-- <button mat-mini-fab color="primary" matTooltip="Remove a service" matTooltipPosition="left">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="#fff" d="M19,13H5V11H19V13Z" />
+        </svg>
+      </button> -->
+      <!-- Upload -->
+      <button mat-mini-fab color="primary" matTooltip="Import from JSON" matTooltipPosition="left" (click)="import()">
+        <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+          <path fill="#fff"
+            d="M12,3C8.59,3 5.69,4.07 4.54,5.57L9.79,10.82C10.5,10.93 11.22,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M3.92,7.08L2.5,8.5L5,11H0V13H5L2.5,15.5L3.92,16.92L8.84,12M20,9C20,11.21 16.42,13 12,13C11.34,13 10.7,12.95 10.09,12.87L7.62,15.34C8.88,15.75 10.38,16 12,16C16.42,16 20,14.21 20,12M20,14C20,16.21 16.42,18 12,18C9.72,18 7.67,17.5 6.21,16.75L4.53,18.43C5.68,19.93 8.59,21 12,21C16.42,21 20,19.21 20,17" />
+        </svg>
+      </button>
+      <!-- Download -->
+      <input #fileImport type="file" style="display:none;" accept="application/json" />
+      <button mat-mini-fab color="primary" matTooltip="Download Current Config" matTooltipPosition="left"
+        (click)="export()">
+        <svg style="width:22px;height:22px" viewBox="0 0 24 24">
+          <path fill="#fff" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+        </svg>
+      </button>
+      <!-- Delete -->
+      <button mat-mini-fab color="primary" matTooltip="Delete all services" matTooltipPosition="left"
+        (click)="deleteAll()">
+        <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+          <path fill="#fff"
+            d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <button mat-fab color="primary" (click)="hide = !hide" class="rotating-fab" [ngClass]="{'reversed': hide}">
+    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="#fff" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+    </svg>
+  </button>
+
+</div>

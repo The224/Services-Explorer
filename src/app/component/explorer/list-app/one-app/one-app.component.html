@@ -1,0 +1,8 @@
+<div class="service">
+  <h4 class="name">
+    <a *ngIf="link" [href]="link" class="hoverline" rel="noopener" target="_blank"><span>{{app.name}}</span></a>
+    <a *ngIf="!link" class="noLink" matTooltip="Not defined for this environment"
+      matTooltipPosition="right"><span>{{app.name}}</span></a>
+  </h4>
+  <p><a [href]="app.repo_link" rel="noopener" target="_blank">Repo</a> {{app.description}} </p>
+</div>
