@@ -17,7 +17,6 @@ export class ConfigService {
   public config: BehaviorSubject<Config> = new BehaviorSubject(null)
 
   constructor(private appService: ApplicationService) {
-    // this.loadConfig(MOCK_APP as any)
     this.config.pipe(filter(Boolean)).subscribe((config: Config) => this.appService.reload(config.services));
   }
 

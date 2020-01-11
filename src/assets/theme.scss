@@ -5,7 +5,7 @@
 
 // Available color palettes: https://material.io/design/color/
 $app-primary: mat-palette($mat-teal);
-$app-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-accent: mat-palette($mat-teal, A200, A100, A400);
 $app-warn: mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 

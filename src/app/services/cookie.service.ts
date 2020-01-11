@@ -67,6 +67,15 @@ export class CookieService {
     document.cookie = `${name}=${value}; path=/`;
   }
 
+  public clearAll() {
+    document.cookie = ACKNOWLEDGE_COOKIE + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = CLIENT_CONFIG + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = SELECTED_GROUP + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = SELECTED_ENV + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = SELECTED_THEME + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    location.reload();
+  }
+
   public openAcknowledgeBar() {
     this.snackBar.open(WE_USE_COOKIE_MESSAGE, "I understand", {
       duration: 0,

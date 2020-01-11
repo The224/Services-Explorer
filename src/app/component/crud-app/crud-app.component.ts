@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
+import { CookieService } from 'src/app/services/cookie.service';
 
 @Component({
   selector: 'app-crud-app',
@@ -12,7 +13,7 @@ export class CrudAppComponent {
 
   public hide: boolean = true;
 
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService, private cookieService: CookieService) { }
 
   import() {
     const fileReader = new FileReader();
@@ -28,6 +29,10 @@ export class CrudAppComponent {
 
   export() {
     this.configService.exportConfig();
+  }
+
+  deleteAll() {
+    this.cookieService.clearAll();
   }
 
 }
