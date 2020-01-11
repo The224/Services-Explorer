@@ -21,6 +21,28 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.title {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    font-size: 2rem;
+}
+
+.github {
+    cursor: pointer;
+
+    svg {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        z-index: 100;
+        font-size: 2rem;
+        width: 32px;
+        height: 32px;
+        fill: #333;
+    }
+}
 
 .hoverline {
     cursor: pointer;
@@ -57,7 +79,6 @@ body {
 
     }
 }
-
 
 .rotating-fab {
     span {

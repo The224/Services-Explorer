@@ -11,33 +11,30 @@ export class OneAppComponent implements OnInit {
   @Input() public app: Application;
 
   public currentEnv: string = null;
-  public linkEnabled: boolean = false;
+  public link: string = null;
 
   constructor(private appService: ApplicationService) { }
 
   ngOnInit() {
     this.appService.getSelectedEnv().subscribe(env => {
       this.currentEnv = env;
-      // TODO Check if there is urls
-      if (this.app.urls /*in this.currentEnv*/) {
-        this.linkEnabled = true;
+      if (this.app.urls) {
+        let changed = false;
+        for (const key in this.app.urls) {
+          if (key === this.currentEnv) {
+            this.link = `${this.app.urls[key]}`;
+            changed = true;
+          }
+        }
+        if (!changed) {
+          this.link = null;
+        }
       } else if (this.app.no_env_url) {
-        this.linkEnabled = true;
+        this.link = `${this.app.no_env_url}`;
       } else {
-        this.linkEnabled = false;
+        this.link = null;
       }
     });
-  }
-
-  public openLink() {
-    const test = [];
-    // TODO Check if there is urls
-    if (this.app.urls) {
-
-    } else if (this.app.no_env_url) {
-
-    }
-
   }
 
 }

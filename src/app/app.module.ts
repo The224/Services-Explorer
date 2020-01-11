@@ -39,8 +39,4 @@ import { ConfigService } from './services/config.service';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(private configService: ConfigService, private cookieService: CookieService) {
-    this.cookieService.init();
-  }
-}
+export class AppModule { }

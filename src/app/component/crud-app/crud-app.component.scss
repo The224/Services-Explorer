@@ -1,7 +1,7 @@
 .expendable-fab {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 24px;
+    right: 24px;
 
     .fabers-wrapper {
         position: absolute;
@@ -14,7 +14,7 @@
         .fabers {
             position: absolute;
             padding: 0 8px;
-            transition: all 0.7s ease-in-out;
+            transition: all 0.4s ease-in-out;
             bottom: 34px;
 
             button {

@@ -1,0 +1,15 @@
+.name {
+    a {
+        color: #333;
+        text-decoration: none !important;
+
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+}
+
+.noLink {
+    cursor: default;
+    color: #888 !important;
+}
