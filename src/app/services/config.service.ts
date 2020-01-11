@@ -29,7 +29,7 @@ export class ConfigService {
     const configAsString = JSON.stringify(currentConfig, undefined, 2);
     const element = document.createElement('a');
     element.setAttribute('href', "data:text/json;charset=UTF-8," + encodeURIComponent(configAsString));
-    element.setAttribute('download', "primer-server-task.json");
+    element.setAttribute('download', "service-explorer-config.json");
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click(); // simulate click
