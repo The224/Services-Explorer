@@ -8,5 +8,35 @@
     justify-content: center;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.hoverline {
+    cursor: pointer;
+    position: relative;
+
+    &:hover:after {
+        left: 0;
+        width: 100%;
+    }
+
+    &:after {
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        background: #333;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+}

@@ -19,7 +19,7 @@ export interface Application {
 export class ApplicationService {
 
   private applicationObservable: BehaviorSubject<Application[]> = new BehaviorSubject([]);
-  private selectedGroupObservable: BehaviorSubject<string> = new BehaviorSubject("Devlopment");
+  private selectedGroupObservable: BehaviorSubject<string> = new BehaviorSubject("Development");
   private selectedEnvObservable: BehaviorSubject<string> = new BehaviorSubject(null);
 
   constructor() {
@@ -34,8 +34,16 @@ export class ApplicationService {
     return this.selectedEnvObservable.asObservable()
   }
 
+  public set_selected_env(env: string) {
+    this.selectedEnvObservable.next(env)
+  }
+
   public get_selected_group(): Observable<string> {
     return this.selectedGroupObservable.asObservable()
+  }
+
+  public set_selected_group(group: string) {
+    this.selectedGroupObservable.next(group)
   }
 
   public get_groups(): Observable<string[]> {

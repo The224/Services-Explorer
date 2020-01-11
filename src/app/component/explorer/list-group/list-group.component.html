@@ -1,4 +1,5 @@
-<div>
-  <!-- <h1 class="text-center">Local Services</h1> -->
-  <h6 *ngFor="let group of groups">{{group}}</h6>
+<div class="groups">
+  <p *ngFor="let group of groups" (click)="changeGroup(group)">
+    <span class="hoverline">{{group}}</span>
+  </p>
 </div>

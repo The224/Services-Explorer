@@ -5,13 +5,13 @@ export const MOCK_APP = {
   "services": [{
     "name": "Bootstrap",
     "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/twbs/bootstrap",
     "no_env_url": "https://getbootstrap.com/",
   }, {
     "name": "knex",
     "description": "A query builder for PostgreSQL, MySQL and SQLite3",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/knex/knex",
     "urls": {
       "dev": "http://knexjs.org/",
@@ -20,7 +20,7 @@ export const MOCK_APP = {
   }, {
     "name": "Coursier",
     "description": "Pure Scala Artifact Fetching",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/coursier/coursier",
     "urls": {
       "prod": "https://get-coursier.io/"
@@ -29,7 +29,7 @@ export const MOCK_APP = {
   }, {
     "name": "Bitwarden",
     "description": "The browser extension vault (Chrome, Firefox, Opera, Edge, Safari, & more).",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/bitwarden/browser",
     "urls": {
       "prod": "https://bitwarden.com/"
@@ -53,7 +53,7 @@ export const MOCK_APP = {
   }, {
     "name": "FastAPI",
     "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
-    "group": "Devlopment",
+    "group": "Development",
     "urls": {
       "dev": "https://fastapi.tiangolo.com/",
       "alpha": "https://fastapi.tiangolo.com/"
@@ -81,7 +81,7 @@ export const MOCK_APP = {
     "no_env_url": "https://code.visualstudio.com/"
   }, {
     "name": "Rust",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/rust-lang/rust",
     "urls": {
       "dev": "https://www.rust-lang.org/",
@@ -100,7 +100,7 @@ export const MOCK_APP = {
   }, {
     "name": "Node.js",
     "description": "A JavaScript runtime built on Chrome’s V8 JavaScript engine",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/nodejs/node",
     "urls": {
       "en": "https://nodejs.org/en/",
@@ -109,12 +109,12 @@ export const MOCK_APP = {
   }, {
     "name": "TensorFlow",
     "description": "Google’s machine learning framework",
-    "group": "Devlopment",
+    "group": "Development",
     "no_env_url": "https://www.tensorflow.org/"
   }, {
     "name": "Space Station 13",
     "description": "A round-based roleplaying game",
-    "group": "Devlopment",
+    "group": "Development",
     "repo_link": "https://github.com/tgstation/tgstation",
     "urls": {
       "dev": "https://www.tgstation13.org/",

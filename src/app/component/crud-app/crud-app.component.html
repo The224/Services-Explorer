@@ -1,6 +1,6 @@
 <div class="expendable-fab">
   <div class="fabers-hider">
-    <div class="fabers-wrapper" [ngStyle]="{'bottom': display ? '4px' : '-124px'}">
+    <div class="fabers-wrapper" [ngStyle]="{'bottom': display ? '34px' : '-124px'}">
       <button mat-mini-fab color="primary" matTooltip="Add a service" matTooltipPosition="left">
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
           <path fill="#fff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <button mat-fab color="primary">
+  <button mat-fab color="primary" (click)="display = !display">
     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
       <path fill="#fff" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
     </svg>

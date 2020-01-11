@@ -19,4 +19,8 @@ export class ListGroupComponent implements OnInit {
     })
   }
 
+  public changeGroup(group: string) {
+    this.appService.set_selected_group(group)
+  }
+
 }
