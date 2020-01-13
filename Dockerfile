@@ -21,6 +21,9 @@ FROM nginx:alpine as server
 
 LABEL maintainer="Marc-Andre Daigneault <contact@the224.info>"
 
+## Installing curl for healthcheck
+RUN apk --no-cache add curl
+
 ## Copy our default nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 
