@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MOCK_APP } from './mock';
 
 export interface Application {
   name: string;
   description: string;
   group: string;
   repo_link: string;
+  doc_link: string;
+  website_link: string;
   urls: { [env: string]: string };
   no_env_url: string;
   dependencies: string[];

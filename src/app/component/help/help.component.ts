@@ -1,22 +1,26 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ConfigService, Config } from 'src/app/services/config.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ConfigService } from 'src/app/services/config.service';
 
 
-const PREVIEW_CONFIG = `
-{
-  "title": "Usefull Services",
+const PREVIEW_CONFIG = `{
+  "title": "Usefull Tools",
   "services": [
     {
-      "name": "Bootstrap",
-      "description": "The most popular Web framework.",
+      "name": "Explorer",
+      "description": "Manage bookmarks by environment.",
       "group": "Development",
-      "repo_link": "https://github.com/twbs/bootstrap",
-      "no_env_url": "https://getbootstrap.com/"
+      "repo_link": "github.com/The224/Services-Explorer",
+      "doc_link": "github.com/The224/Services-Explorer/wiki",
+      "website_link": "explorer.the224.info/",
+      "urls": {
+        "dev": "localhost:4200",
+        "prod": "explorer.the224.info/"
+      },
+      "no_env_url": "explorer.the224.info/"
     },
     ...
   ]
-}
-`
+}`
 
 @Component({
   selector: 'app-help',

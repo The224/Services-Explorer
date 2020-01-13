@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
 import { CookieService } from 'src/app/services/cookie.service';
 
@@ -33,6 +33,7 @@ export class CrudAppComponent {
 
   deleteAll() {
     this.cookieService.clearAll();
+    location.reload();
   }
 
 }

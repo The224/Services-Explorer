@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ApplicationService, Application } from './application.service';
 import { BehaviorSubject } from 'rxjs';
-import { MOCK_APP } from './mock';
 import { filter } from 'rxjs/operators';
+import { Application, ApplicationService } from './application.service';
 
 export interface Config {
   title: string;
@@ -21,7 +20,7 @@ export class ConfigService {
   }
 
   public loadConfig(config: Config) {
-    this.config.next(config)
+    this.config.next(config);
   }
 
   public exportConfig() {
